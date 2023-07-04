@@ -31,6 +31,7 @@ int _printf(const char *format, ...)
 				if (s == NULL)
 					s = "(nil)";
 				size_t len = strlen(s);
+
 				write(1, s, len);
 				break;
 			case '%':
