@@ -30,10 +30,13 @@ int _printf(const char *format, ...)
 				s = va_arg(all, char *);
 				if (s == NULL)
 					s = "(nil)";
-				write(1, &s, 0);
+				size_t len = strlen(s);
+
+				write(1, s, len);
 				break;
 			case '%':
 				_putchar('%');
+				break;
 			default:
 				x++;
 				continue;
@@ -44,6 +47,5 @@ int _printf(const char *format, ...)
 
 		x++;
 	}
-	_putchar('\n');
 	va_end(all);
 }
