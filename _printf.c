@@ -12,10 +12,9 @@ int _printf(const char *format, ...)
 	va_list all;
 	char *s;
 	char c;
-	size_t len;
+	size_t lent;
 
 	va_start(all, format);
-
 	x = 0;
 	while (format[x])
 	{
@@ -31,24 +30,22 @@ int _printf(const char *format, ...)
 					s = va_arg(all, char *);
 					if (s == NULL)
 						s = "(nil)";
-					len = strlen(s);
+					lent = strlen(s);
 
-					write(1, s, len);
+					write(1, s, lent);
 					break;
 				case '%':
 					_putchar('%');
 					break;
 				default:
 					x++;
-					continue;
+					break;
 			}
 		}
 		else
 			_putchar(format[x]);
-
 		x++;
 	}
 	va_end(all);
-
 	return (0);
 }
