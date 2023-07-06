@@ -39,7 +39,6 @@ int _printf(const char *format, ...)
 					break;
 				default:
 					break;
-					/*x++;*/
 			}
 		}
 		else
