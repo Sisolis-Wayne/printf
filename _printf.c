@@ -15,7 +15,6 @@ int _printf(const char *format, ...)
 	size_t len;
 
 	va_start(all, format);
-
 	x = 0;
 	while (format[x])
 	{
@@ -45,10 +44,8 @@ int _printf(const char *format, ...)
 		}
 		else
 			_putchar(format[x]);
-
 		x++;
 	}
 	va_end(all);
-
 	return (0);
 }
