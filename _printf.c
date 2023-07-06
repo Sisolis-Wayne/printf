@@ -40,7 +40,7 @@ int _printf(const char *format, ...)
 					break;
 				default:
 					x++;
-					continue;
+					break;
 			}
 		}
 		else
