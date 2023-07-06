@@ -21,34 +21,34 @@ int _printf(const char *format, ...)
 	{
 		if (format[x] == '%')
 		{
-		switch (format[++x])
-		{
-			case 'c':
-				c = va_arg(all, int);
-				_putchar(c);
-				break;
-			case 's':
-				s = va_arg(all, char *);
-				if (s == NULL)
-					s = "(nil)";
-				len = strlen(s);
+			switch (format[++x])
+			{
+				case 'c':
+					c = va_arg(all, int);
+					_putchar(c);
+					break;
+				case 's':
+					s = va_arg(all, char *);
+					if (s == NULL)
+						s = "(nil)";
+					len = strlen(s);
 
-				write(1, s, len);
-				break;
-			case '%':
-				_putchar('%');
-				break;
-			default:
-				x++;
-				continue;
-		}
+					write(1, s, len);
+					break;
+				case '%':
+					_putchar('%');
+					break;
+				default:
+					x++;
+					continue;
+			}
 		}
 		else
 			_putchar(format[x]);
 
 		x++;
-	va_end(all);
 	}
+	va_end(all);
 
 	return (0);
 }
