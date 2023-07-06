@@ -38,8 +38,8 @@ int _printf(const char *format, ...)
 					_putchar('%');
 					break;
 				default:
-					x++;
 					break;
+					/*x++;*/
 			}
 		}
 		else
