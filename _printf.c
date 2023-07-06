@@ -12,6 +12,7 @@ int _printf(const char *format, ...)
 	va_list all;
 	char *s;
 	char c;
+	size_t len;
 
 	va_start(all, format);
 
@@ -30,7 +31,7 @@ int _printf(const char *format, ...)
 				s = va_arg(all, char *);
 				if (s == NULL)
 					s = "(nil)";
-				size_t len = strlen(s);
+				len = strlen(s);
 
 				write(1, s, len);
 				break;
@@ -46,6 +47,8 @@ int _printf(const char *format, ...)
 			_putchar(format[x]);
 
 		x++;
-	}
 	va_end(all);
+	}
+
+	return (0);
 }
